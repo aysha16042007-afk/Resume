@@ -1,0 +1,248 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      padding:20px;
+    }
+
+    .resume{
+      max-width:900px;
+      background:white;
+      margin:auto;
+      display:flex;
+      box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .left{
+      width:35%;
+      background:#1e293b;
+      color:white;
+      padding:25px;
+    }
+
+    .right{
+      width:65%;
+      padding:25px;
+    }
+
+    .profile{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .profile img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      border:4px solid white;
+      object-fit:cover;
+    }
+
+    h1{
+      margin-top:10px;
+      font-size:28px;
+    }
+
+    h2{
+      margin-bottom:10px;
+      color:#0f172a;
+      border-bottom:2px solid #0f172a;
+      padding-bottom:5px;
+    }
+
+    .left h2{
+      color:white;
+      border-bottom:2px solid white;
+    }
+
+    .section{
+      margin-bottom:25px;
+    }
+
+    p, li{
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    ul{
+      margin-left:20px;
+    }
+
+    .contact p{
+      margin-bottom:8px;
+    }
+
+    button{
+      margin-top:20px;
+      padding:10px 18px;
+      border:none;
+      background:#0f172a;
+      color:white;
+      cursor:pointer;
+      border-radius:5px;
+      font-size:15px;
+    }
+
+    button:hover{
+      background:#334155;
+    }
+
+    .dark-mode{
+      background:#111827;
+      color:white;
+    }
+
+    .dark-mode .resume{
+      background:#1f2937;
+      color:white;
+    }
+
+    .dark-mode .right h2{
+      color:white;
+      border-color:white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button onclick="toggleMode()">Toggle Dark Mode</button>
+
+  <div class="resume">
+
+    <!-- Left Section -->
+    <div class="left">
+
+      <div class="profile">
+        <img src="https://via.placeholder.com/120" alt="Profile Photo">
+        <h1 id="name">Aysha R</h1>
+        <p id="role">IT Student</p>
+      </div>
+
+      <div class="section contact">
+        <h2>Contact</h2>
+        <p>📞 +91 9876543210</p>
+        <p>📧 aysha@email.com</p>
+        <p>📍 Tamil Nadu, India</p>
+      </div>
+
+      <div class="section">
+        <h2>Skills</h2>
+        <ul id="skillsList">
+          <li>HTML</li>
+          <li>C</li>
+          <li>Java</li>
+          <li>DBMS</li>
+          <li>ASP DOT NET</li>
+        </ul>
+
+        <button onclick="addSkill()">Add Skill</button>
+      </div>
+
+      <div class="section">
+        <h2>Languages</h2>
+        <ul>
+          <li>English</li>
+          <li>Tamil</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Right Section -->
+    <div class="right">
+
+      <div class="section">
+        <h2>Profile</h2>
+        <p>
+          Motivated IT student passionate about web development and software technologies.
+          Looking for opportunities to improve technical and problem-solving skills.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Education</h2>
+
+        <p><strong>B.Sc Information Technology</strong></p>
+        <p>Rabiammal Ahamed Maideen College For Women | 2024 - 2027</p>
+
+        <br>
+
+        <p><strong>Higher Secondary Education</strong></p>
+        <p>Oxford Matric Higher Secondary School | 2022 - 2024</p>
+      </div>
+
+      <div class="section">
+        <h2>Projects</h2>
+
+        <p><strong>ShopSphere E-commerce Website</strong></p>
+        <p>
+          Developed a responsive e-commerce website with product listings,
+          shopping cart, and admin dashboard.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Full Stack Development Course</li>
+          <li>Python Programming</li>
+          <li>SQL Basics</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Declaration</h2>
+        <p>
+          I hereby declare that the above information is true to the best of my knowledge.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+
+    // Dark Mode Function
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Add Skill Function
+    function addSkill() {
+      let skill = prompt("Enter a new skill:");
+
+      if(skill !== "" && skill !== null){
+
+        let li = document.createElement("li");
+        li.textContent = skill;
+
+        document.getElementById("skillsList").appendChild(li);
+      }
+    }
+
+    // Welcome Alert
+    window.onload = function(){
+      alert("Welcome to Aysha's Resume Website!");
+    }
+
+  </script>
+
+</body>
+</html>
